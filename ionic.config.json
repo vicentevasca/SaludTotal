@@ -1,0 +1,7 @@
+{
+  "name": "SalusTotal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
