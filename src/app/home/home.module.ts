@@ -4,16 +4,17 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
-import { HomePageRoutingModule } from './home-routing.module';
-
+import { VisualizarPageModule } from '../cliente/visualizar/visualizar.page.module';
+import { AsignarPageModule } from '../medico/horarios/asignar/asignar.page.module';
 
 @NgModule({
+  declarations: [HomePage], // SOLO el home
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
-  ],
-  declarations: [HomePage]
+    VisualizarPageModule,  // Importas sus módulos
+    AsignarPageModule
+  ]
 })
 export class HomePageModule {}

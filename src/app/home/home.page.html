@@ -1,20 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="dashboard">
+  <div class="layout">
+    <!-- Menú lateral -->
+    <div class="sidebar">
+      <h2>Menu</h2>
+      <ion-button expand="block" (click)="mostrar('visualizar')">Visualizar Pacientes</ion-button>
+      <ion-button expand="block" (click)="mostrar('asignar')">Asignar Horarios</ion-button>
+    </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <!-- Contenido dinámico -->
+    <div class="main-content">
+      <ng-container [ngSwitch]="currentView">
+        <div *ngSwitchCase="'welcome'" class="welcome">
+          <h1>Bienvenido al Panel Administrativo</h1>
+          <p>Seleccione una opción en el menú</p>
+        </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <app-asignar *ngSwitchCase="'asignar'"></app-asignar>
+        <app-visualizar *ngSwitchCase="'visualizar'"></app-visualizar>
+      </ng-container>
+    </div>
   </div>
 </ion-content>

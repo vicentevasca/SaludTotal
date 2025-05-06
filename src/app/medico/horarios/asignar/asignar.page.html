@@ -1,0 +1,35 @@
+<div class="asignar-container">
+    <div class="header">
+      <h2>Asignar Horarios a Médicos</h2>
+    </div>
+  
+    <div class="content">
+      <!-- Lista de médicos -->
+      <div class="medico-lista">
+        <ion-card *ngFor="let medico of medicos" (click)="seleccionarMedico(medico)">
+          <ion-card-header>
+            <ion-card-title>{{ medico.nombre }}</ion-card-title>
+            <ion-card-subtitle>{{ medico.especialidad }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <strong>Horario actual:</strong><br>
+            {{ medico.horario }}
+          </ion-card-content>
+        </ion-card>
+      </div>
+  
+      <!-- Formulario de edición -->
+      <div class="formulario" *ngIf="selectedMedico">
+        <h3>Editar horario de {{ selectedMedico.nombre }}</h3>
+        <ion-item>
+          <ion-label position="stacked">Nuevo horario</ion-label>
+          <ion-input [(ngModel)]="nuevoHorario" placeholder="Ej: Lun-Vie 08:00 - 12:00"></ion-input>
+        </ion-item>
+        <div class="botones">
+          <ion-button color="success" (click)="guardarHorario()">Guardar</ion-button>
+          <ion-button color="medium" (click)="cancelarEdicion()">Cancelar</ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

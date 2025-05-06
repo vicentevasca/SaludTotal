@@ -1,0 +1,28 @@
+<div class="visualizar-container">
+    <div class="header">
+      <h2>Pacientes Atendidos</h2>
+      <span class="counter">{{ totalAtendidos }} pacientes</span>
+    </div>
+  
+    <ion-searchbar placeholder="Buscar paciente..."></ion-searchbar>
+  
+    <div class="listado">
+      <div class="paciente-card" *ngFor="let paciente of pacientes">
+        <div class="info-principal">
+          <div class="nombre">{{ paciente.nombre }}</div>
+          <div class="estado">{{ paciente.estado }}</div>
+        </div>
+        <div class="info-detalles">
+          <div>
+            <strong>Fecha:</strong> {{ paciente.fecha }}
+          </div>
+          <div>
+            <strong>Diagnóstico:</strong> {{ paciente.diagnostico }}
+          </div>
+          <div>
+            <strong>Doctor:</strong> {{ paciente.doctor }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

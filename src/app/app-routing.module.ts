@@ -7,6 +7,14 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'paciente/visualizar',
+    loadChildren: () => import('./cliente/visualizar/visualizar.page.module').then(m => m.VisualizarPageModule)
+  },
+  {
+    path: 'medico/horario/asignar',
+    loadChildren: () => import('./medico/horarios/asignar/asignar.page.module').then(m => m.AsignarPageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
